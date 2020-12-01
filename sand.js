@@ -18,7 +18,7 @@ const create_folder = (folder_name) => {
 
 
 const del_folder = (folder_name) => {
-    check = fs.existsSync(folder_name)
+    check = fs.existsSync(folder_name) //checking if folder exist
     if (check) {
         fs.rmdirSync(folder_name) //deleting folder with fs
     }
@@ -28,5 +28,11 @@ const del_folder = (folder_name) => {
 }
 
 create_folder('files')
-
+//writing file
 fs.writeFileSync('./files/test.txt', 'Hello there!!! \n Testing microphone 1, 2')
+
+//reading files
+console.log(fs.readdirSync('files')) //checking files inside folder
+
+console.log(fs.existsSync('./files/test.txt')) //with exact path you can check files with exists
+console.log('checking')
