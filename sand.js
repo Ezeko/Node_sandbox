@@ -27,7 +27,21 @@ const del_folder = (folder_name) => {
     }
 }
 
-create_folder('files')
+try{
+
+    create_folder('files')
+} 
+catch (e) {
+    console.log('An error occur', e)
+}
+
+try{
+
+    del_folder('files')
+} 
+catch (e) {
+    console.log('An error occur', e)
+}
 //writing file
 fs.writeFileSync('./files/test.txt', 'Hello there!!! \n Testing microphone 1, 2')
 
@@ -36,3 +50,11 @@ console.log(fs.readdirSync('files')) //checking files inside folder
 
 console.log(fs.existsSync('./files/test.txt')) //with exact path you can check files with exists
 console.log('checking')
+
+//reading files
+
+file = fs.readFileSync('./files/test.txt', 'utf-8')
+
+console.log(file)
+
+// fs.readFile('./files/test.txt', 'utf8', (err, file) => console.log(file)) // reading with async
