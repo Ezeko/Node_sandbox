@@ -27,4 +27,6 @@ const del_folder = (folder_name) => {
     }
 }
 
-create_folder('sand')
+create_folder('files')
+
+fs.writeFileSync('./files/test.txt', 'Hello there!!! \n Testing microphone 1, 2')
